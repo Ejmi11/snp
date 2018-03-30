@@ -33,7 +33,7 @@ void swap( int indexOne, int indexTwo ){
 
 void heapifyDown(){
   int index = 0;
-  while(hasLeftChild(index) == 1){    
+  while(hasLeftChild(index) == 1){
     int smallerChildIndex = getLeftChildIndex(index);
 
     if(hasRightChild(index) == 1 && rightChild(index) < leftChild(index)) {
@@ -50,7 +50,7 @@ void heapifyDown(){
   }
 }
 
-void heapifyUp(){  
+void heapifyUp(){
   int index = size - 1;
   while( hasParent(index) == 1 && parent(index) > heap_array[index] ) {
     swap(getParentIndex(index), index);
@@ -90,14 +90,14 @@ void bheap_run_node_operation(bheap *h, int priority) {
 void bheap_destroy(bheap *h) {
   // TODO: Free all nodes and set root_node to NULL.
   // Make sure that no memory leak occurs.
-  free(h);
+  // free(h);
   h->root_node = NULL;
 }
 
 void print_array(){
   printf("\n");
- for(int i = 0; i < size; i++) {     
-    printf("%d | ", heap_array[i]);  
-  } 
+ for(int i = 0; i < size; i++) {
+    printf("%d | ", heap_array[i]);
+  }
   printf("\n");
 }
